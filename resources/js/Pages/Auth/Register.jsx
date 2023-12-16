@@ -48,7 +48,7 @@ export default function Register() {
           <InputLabel
             htmlFor="name"
             value="Name"
-            className="bg-gray-100 absolute text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-800 peer-placeholder-shown:top-1.5"
+            className="bg-gray-100 absolute text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-1.5"
           />
 
           <InputError message={errors.name} className="text-xs" />
@@ -69,7 +69,7 @@ export default function Register() {
           <InputLabel
             htmlFor="email"
             value="Email"
-            className="bg-gray-100 absolute text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-800 peer-placeholder-shown:top-1.5"
+            className="bg-gray-100 absolute text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-1.5"
           />
 
           <InputError message={errors.email} className="text-xs" />
@@ -90,7 +90,7 @@ export default function Register() {
           <InputLabel
             htmlFor="password"
             value="Password"
-            className="bg-gray-100 absolute text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-800 peer-placeholder-shown:top-1.5"
+            className="bg-gray-100 absolute text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-1.5"
           />
 
           <InputError message={errors.password} className="text-xs" />
@@ -111,7 +111,7 @@ export default function Register() {
           <InputLabel
             htmlFor="password_confirmation"
             value="Confirm Password"
-            className="bg-gray-100 absolute text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-800 peer-placeholder-shown:top-1.5"
+            className="bg-gray-100 absolute text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-1.5"
           />
 
           <InputError

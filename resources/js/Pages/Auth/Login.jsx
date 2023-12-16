@@ -130,7 +130,7 @@ export default function Login({ status, canResetPassword }) {
               <InputLabel
                 htmlFor="email"
                 value="Email"
-                className="absolute bg-white text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-800 peer-placeholder-shown:top-1.5"
+                className="absolute bg-white text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-1.5"
               />
 
               <InputError message={errors.email} className="text-xs" />
@@ -150,7 +150,7 @@ export default function Login({ status, canResetPassword }) {
               <InputLabel
                 htmlFor="password"
                 value="Password"
-                className="absolute bg-white text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-800 peer-placeholder-shown:top-1.5"
+                className="absolute bg-white text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-1.5"
               />
 
               <InputError message={errors.password} className="text-xs" />
