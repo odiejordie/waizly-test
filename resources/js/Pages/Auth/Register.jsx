@@ -22,18 +22,18 @@ export default function Register() {
   const submit = (e) => {
     e.preventDefault();
 
-    post(route("register"));
+    post(route("register"), { replace: true });
   };
 
   return (
-    <div className="p-5 md:w-1/2 w-full h-1/2 md:h-full flex flex-col justify-between right-0">
-      <div className="font-silkscreen cursor-default text-left md:text-right text-2xl uppercase text-gray-800 transition-color hover:text-gray-600">
+    <div className="right-0 flex flex-col justify-between w-full p-5 md:w-1/2 h-1/2 md:h-full">
+      <div className="text-2xl text-left text-gray-800 uppercase cursor-default font-silkscreen md:text-right transition-color hover:text-gray-600">
         <p>Daftar Pinjam</p>
         <p>Meminjam</p>
       </div>
-      <form onSubmit={submit} className="gap-2 flex flex-col">
-        <h1 className="text-lg font-silkscreen cursor-default">Daftar...</h1>
-        <div className="flex flex-col gap-1 relative">
+      <form onSubmit={submit} className="flex flex-col gap-2">
+        <h1 className="text-lg cursor-default font-silkscreen">Daftar...</h1>
+        <div className="relative flex flex-col gap-1">
           <TextInput
             type="text"
             id="name"
@@ -42,7 +42,7 @@ export default function Register() {
             autoComplete="name"
             value={data.name}
             onChange={(e) => setData("name", e.target.value)}
-            className="peer placeholder-transparent bg-gray-100"
+            className="placeholder-transparent bg-gray-100 peer"
           />
 
           <InputLabel
@@ -54,7 +54,7 @@ export default function Register() {
           <InputError message={errors.name} className="text-xs" />
         </div>
 
-        <div className="flex flex-col gap-1 relative">
+        <div className="relative flex flex-col gap-1">
           <TextInput
             type="text"
             id="email"
@@ -63,7 +63,7 @@ export default function Register() {
             autoComplete="username"
             value={data.email}
             onChange={(e) => setData("email", e.target.value)}
-            className="peer placeholder-transparent bg-gray-100"
+            className="placeholder-transparent bg-gray-100 peer"
           />
 
           <InputLabel
@@ -75,7 +75,7 @@ export default function Register() {
           <InputError message={errors.email} className="text-xs" />
         </div>
 
-        <div className="flex flex-col gap-1 relative">
+        <div className="relative flex flex-col gap-1">
           <TextInput
             type="password"
             id="password"
@@ -84,7 +84,7 @@ export default function Register() {
             autoComplete="new-password"
             value={data.password}
             onChange={(e) => setData("password", e.target.value)}
-            className="peer placeholder-transparent bg-gray-100"
+            className="placeholder-transparent bg-gray-100 peer"
           />
 
           <InputLabel
@@ -96,7 +96,7 @@ export default function Register() {
           <InputError message={errors.password} className="text-xs" />
         </div>
 
-        <div className="flex flex-col gap-1 relative">
+        <div className="relative flex flex-col gap-1">
           <TextInput
             type="password"
             id="password_confirmation"
@@ -105,7 +105,7 @@ export default function Register() {
             autoComplete="new-password"
             value={data.password_confirmation}
             onChange={(e) => setData("password_confirmation", e.target.value)}
-            className="peer placeholder-transparent bg-gray-100"
+            className="placeholder-transparent bg-gray-100 peer"
           />
 
           <InputLabel
@@ -123,7 +123,7 @@ export default function Register() {
         <div className="flex items-center justify-end mt-1">
           {/* <Link
             href={route("login")}
-            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="text-sm text-gray-600 underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             Already registered?
           </Link> */}

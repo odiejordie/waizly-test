@@ -28,7 +28,7 @@ export default function Login({ status, canResetPassword }) {
   const submit = (e) => {
     e.preventDefault();
 
-    post(route("login"));
+    post(route("login"), { replace: true });
   };
 
   return (
@@ -36,7 +36,7 @@ export default function Login({ status, canResetPassword }) {
       <Head title="Masuk Bang" />
 
       {status && (
-        <div className="mb-4 font-medium text-sm text-green-600">{status}</div>
+        <div className="mb-4 text-sm font-medium text-green-600">{status}</div>
       )}
 
       {/* <form onSubmit={submit}>
@@ -48,7 +48,7 @@ export default function Login({ status, canResetPassword }) {
             type="email"
             name="email"
             value={data.email}
-            className="mt-1 block w-full"
+            className="block w-full mt-1"
             autoComplete="username"
             isFocused={true}
             onChange={(e) => setData("email", e.target.value)}
@@ -65,7 +65,7 @@ export default function Login({ status, canResetPassword }) {
             type="password"
             name="password"
             value={data.password}
-            className="mt-1 block w-full"
+            className="block w-full mt-1"
             autoComplete="current-password"
             onChange={(e) => setData("password", e.target.value)}
           />
@@ -80,7 +80,7 @@ export default function Login({ status, canResetPassword }) {
               checked={data.remember}
               onChange={(e) => setData("remember", e.target.checked)}
             />
-            <span className="ms-2 text-sm text-gray-600">Remember me</span>
+            <span className="text-sm text-gray-600 ms-2">Remember me</span>
           </label>
         </div>
 
@@ -88,7 +88,7 @@ export default function Login({ status, canResetPassword }) {
           {canResetPassword && (
             <Link
               href={route("password.request")}
-              className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="text-sm text-gray-600 underline rounded-md hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               Forgot your password?
             </Link>
@@ -100,7 +100,7 @@ export default function Login({ status, canResetPassword }) {
         </div>
       </form> */}
 
-      <div className="flex p-2 h-full relative w-full flex-col justify-between bg-gray-100 shadow-2xl md:h-1/2 md:w-1/2 md:flex-row md:rounded-2xl md:bg-right">
+      <div className="relative flex flex-col justify-between w-full h-full p-2 bg-gray-100 shadow-2xl md:h-1/2 md:w-1/2 md:flex-row md:rounded-2xl md:bg-right">
         <div
           className={`flex h-1/2 z-50 flex-col relative transition-all ease-in-out duration-700 justify-between rounded-xl bg-white p-5 drop-shadow md:h-full md:w-1/2 ${
             showPanel?.panel === "login"
@@ -108,14 +108,14 @@ export default function Login({ status, canResetPassword }) {
               : "md:translate-x-0 md:translate-y-0 translate-y-0"
           }`}
         >
-          <div className="font-silkscreen cursor-default text-right text-2xl uppercase text-gray-800 md:text-left transition-color hover:text-gray-600">
+          <div className="text-2xl text-right text-gray-800 uppercase cursor-default font-silkscreen md:text-left transition-color hover:text-gray-600">
             <p>Meminjam</p>
             <p>Dengan</p>
             <p>Gaya</p>
           </div>
-          <form onSubmit={submit} className="flex w-full flex-col gap-2">
-            <h1 className="text-lg font-silkscreen cursor-default">Masuk...</h1>
-            <div className="flex flex-col gap-1 relative">
+          <form onSubmit={submit} className="flex flex-col w-full gap-2">
+            <h1 className="text-lg cursor-default font-silkscreen">Masuk...</h1>
+            <div className="relative flex flex-col gap-1">
               <TextInput
                 type="text"
                 id="email"
@@ -124,7 +124,7 @@ export default function Login({ status, canResetPassword }) {
                 autoComplete="username"
                 value={data.email}
                 onChange={(e) => setData("email", e.target.value)}
-                className="peer placeholder-transparent"
+                className="placeholder-transparent peer"
               />
 
               <InputLabel
@@ -135,7 +135,7 @@ export default function Login({ status, canResetPassword }) {
 
               <InputError message={errors.email} className="text-xs" />
             </div>
-            <div className="flex flex-col gap-1 relative">
+            <div className="relative flex flex-col gap-1">
               <TextInput
                 type="password"
                 id="password"
@@ -144,7 +144,7 @@ export default function Login({ status, canResetPassword }) {
                 autoComplete="current-password"
                 value={data.password}
                 onChange={(e) => setData("password", e.target.value)}
-                className="peer placeholder-transparent"
+                className="placeholder-transparent peer"
               />
 
               <InputLabel
@@ -162,18 +162,18 @@ export default function Login({ status, canResetPassword }) {
           {showPanel.panel !== "login" ? (
             <p
               onClick={() => setShowPanel({ ...showPanel, panel: "login" })}
-              className="mt-5 cursor-pointer transition-color hover:text-gray-600 text-right text-xs text-gray-800"
+              className="mt-5 text-xs text-right text-gray-800 cursor-pointer transition-color hover:text-gray-600"
             >
               Kalo sudah daftar mah tinggal masuk atuh.
             </p>
           ) : (
-            <p className="mt-5 cursor-default text-right text-xs text-gray-800">
+            <p className="mt-5 text-xs text-right text-gray-800 cursor-default">
               Belum punya akun?{" "}
               <span
                 onClick={() =>
                   setShowPanel({ ...showPanel, panel: "register" })
                 }
-                className="cursor-pointer font-bold hover:underline transition-color hover:text-gray-600"
+                className="font-bold cursor-pointer hover:underline transition-color hover:text-gray-600"
               >
                 Daftar Sekarang
               </span>
