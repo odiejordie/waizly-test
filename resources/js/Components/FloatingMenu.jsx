@@ -3,11 +3,11 @@ import { useRef, useState } from "react";
 import { AnimatePresence, motion as m } from "framer-motion";
 import { popupMenuVariants } from "@/Constant/AnimationVariants";
 import useOnClickOutside from "@/Constant/OnClickOutside";
-import { router } from "@inertiajs/react";
+import { router, usePage } from "@inertiajs/react";
 
 const FloatingMenu = () => {
-  const [activeMenu, setActiveMenu] = useState("dashboard");
   const [popupStatus, setPopupStatus] = useState(false);
+  const { url } = usePage();
 
   const popupRef = useRef();
 
@@ -19,11 +19,13 @@ const FloatingMenu = () => {
         {menus.map((item, key) => (
           <div
             key={key}
-            onClick={() => setActiveMenu(item.slug)}
+            onClick={() => {
+              router.visit(item.route);
+            }}
             className={`flex p-4 relative`}
           >
             {item.component}
-            {item.slug === activeMenu && (
+            {item.route === url && (
               <m.div
                 layoutId="active- menu"
                 className="absolute top-0 left-0 w-full h-full rounded-full bg-neutral-200/50"

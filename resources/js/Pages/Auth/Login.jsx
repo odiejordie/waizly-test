@@ -32,7 +32,7 @@ export default function Login({ status, canResetPassword }) {
   };
 
   return (
-    <GuestLayout>
+    <>
       <Head title="Masuk Bang" />
 
       {status && (
@@ -183,6 +183,8 @@ export default function Login({ status, canResetPassword }) {
 
         <Register />
       </div>
-    </GuestLayout>
+    </>
   );
 }
+
+Login.layout = (page) => <GuestLayout children={page} />;

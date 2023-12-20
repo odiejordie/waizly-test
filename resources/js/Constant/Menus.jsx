@@ -2,6 +2,7 @@ export const menus = [
   {
     name: "Dashboard",
     slug: "dashboard",
+    route: "/dashboard",
     component: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -20,6 +21,7 @@ export const menus = [
   {
     name: "Ngutang",
     slug: "ngutang",
+    route: "/lending",
     component: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

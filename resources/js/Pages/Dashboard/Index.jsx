@@ -8,12 +8,12 @@ import ProfileCard from "@/Components/ProfileCard";
 
 const Index = ({ auth }) => {
   return (
-    <AuthenticatedLayout user={auth.user}>
+    <>
       <Head title="Dashboard" />
 
       <div className="flex flex-col w-full h-screen bg-white md:flex-row">
         {/* CARD WRAPPER */}
-        <div className="flex flex-col items-center w-full p-8 pt-24 bg-white shadow-lg md:h-full">
+        <div className="flex flex-col items-center w-full p-8 pt-24 bg-white shadow-lg rounded-b-2xl md:rounded-none md:h-full">
           {/* CARD */}
           <ProfileCard user={auth.user} />
           {/* END CARD */}
@@ -81,8 +81,12 @@ const Index = ({ auth }) => {
           </div>
         </div>
       </div>
-    </AuthenticatedLayout>
+    </>
   );
 };
+
+Index.layout = (page) => (
+  <AuthenticatedLayout children={page} header="Dashboard" />
+);
 
 export default Index;

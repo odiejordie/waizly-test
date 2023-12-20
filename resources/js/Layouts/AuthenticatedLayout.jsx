@@ -1,14 +1,13 @@
 import { useState } from "react";
-import ApplicationLogo from "@/Components/ApplicationLogo";
-import Dropdown from "@/Components/Dropdown";
-import NavLink from "@/Components/NavLink";
-import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
-import { Link, router } from "@inertiajs/react";
+import { usePage } from "@inertiajs/react";
 import FloatingMenu from "@/Components/FloatingMenu";
+import { AnimatePresence, motion as m } from "framer-motion";
 
-export default function Authenticated({ user, header, children }) {
+export default function Authenticated({ header, children }) {
   const [showingNavigationDropdown, setShowingNavigationDropdown] =
     useState(false);
+
+  const { url } = usePage();
 
   return (
     // <div className="min-h-screen bg-gray-100">
@@ -123,14 +122,25 @@ export default function Authenticated({ user, header, children }) {
 
     //     <main>{children}</main>
     // </div>
+
     <div className="relative min-h-screen bg-white">
       {/* FLOATING MENU */}
       <FloatingMenu />
       {/* END FLOATING MENU */}
-      <h1 className="absolute p-8 pb-0 text-2xl font-semibold text-right md:z-10 md:text-left md:p-8 md:px-12">
-        Dashboard
-      </h1>
-      <main className="w-full min-h-screen">{children}</main>
+      <AnimatePresence mode="wait">
+        <m.main
+          key={url}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 10 }}
+          className="w-full min-h-screen"
+        >
+          <h1 className="absolute p-8 pb-0 text-2xl font-semibold text-right md:z-10 md:text-left md:p-8 md:px-12">
+            {header}
+          </h1>
+          {children}
+        </m.main>
+      </AnimatePresence>
     </div>
   );
 }
