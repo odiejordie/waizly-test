@@ -26,7 +26,7 @@ const FloatingMenu = () => {
             {item.slug === activeMenu && (
               <m.div
                 layoutId="active- menu"
-                className="absolute top-0 left-0 w-full h-full rounded-full bg-neutral-300"
+                className="absolute top-0 left-0 w-full h-full rounded-full bg-neutral-200/50"
               ></m.div>
             )}
           </div>
