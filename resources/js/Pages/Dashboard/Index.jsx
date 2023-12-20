@@ -4,6 +4,7 @@ import { Head } from "@inertiajs/react";
 import { motion as m } from "framer-motion";
 import { debtTypeList } from "@/Constant/DebtType";
 import DebtTypeCard from "@/Components/DebtTypeCard";
+import ProfileCard from "@/Components/ProfileCard";
 
 const Index = ({ auth }) => {
   return (
@@ -14,21 +15,7 @@ const Index = ({ auth }) => {
         {/* CARD WRAPPER */}
         <div className="flex flex-col items-center w-full p-8 pt-24 bg-white shadow-lg md:h-full">
           {/* CARD */}
-          <div className="relative flex items-center justify-between w-full overflow-hidden border shadow-xl bg-neutral-200 md:max-w-md rounded-3xl h-60 md:max-h-80">
-            <div className="p-5"></div>
-            <div className="relative w-1/2 h-full">
-              <div className="absolute w-1/3 h-full bg-gradient-to-r from-neutral-200"></div>
-              <img
-                src="https://images.unsplash.com/photo-1695653422279-8a8a52ccb3cc?q=80&w=1080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="#"
-                className="object-cover object-center w-full h-full"
-              />
-            </div>
-            <div className="absolute bottom-0 flex flex-col w-full p-5 bg-white/30 backdrop-blur-sm h-1/2">
-              <span className="py-1 text-xs text-neutral-600">Card Name</span>
-              <span className="text-xl font-semibold">{auth.user.name}</span>
-            </div>
-          </div>
+          <ProfileCard user={auth.user} />
           {/* END CARD */}
           <div className="flex flex-col w-full p-10 text-center border-b border-dashed">
             <span className="text-2xl text-center font-silkscreen">
