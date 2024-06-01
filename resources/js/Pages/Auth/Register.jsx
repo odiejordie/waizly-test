@@ -28,15 +28,15 @@ export default function Register() {
   return (
     <div className="right-0 flex flex-col justify-between w-full p-5 md:w-1/2 h-1/2 md:h-full">
       <div className="text-2xl text-left text-gray-800 uppercase cursor-default font-silkscreen md:text-right transition-color hover:text-gray-600">
-        <p>Daftar Pinjam</p>
-        <p>Meminjam</p>
+        <p>Daftar Waizly</p>
+        <p>Assessment</p>
       </div>
       <form onSubmit={submit} className="flex flex-col gap-2">
         <h1 className="text-lg cursor-default font-silkscreen">Daftar...</h1>
         <div className="relative flex flex-col gap-1">
           <TextInput
             type="text"
-            id="name"
+            id="register-name"
             placeholder="Name"
             name="name"
             autoComplete="name"
@@ -46,7 +46,7 @@ export default function Register() {
           />
 
           <InputLabel
-            htmlFor="name"
+            htmlFor="register-name"
             value="Name"
             className="bg-gray-100 absolute text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-1.5"
           />
@@ -57,7 +57,7 @@ export default function Register() {
         <div className="relative flex flex-col gap-1">
           <TextInput
             type="text"
-            id="email"
+            id="register-email"
             placeholder="Email"
             name="email"
             autoComplete="username"
@@ -67,7 +67,7 @@ export default function Register() {
           />
 
           <InputLabel
-            htmlFor="email"
+            htmlFor="register-email"
             value="Email"
             className="bg-gray-100 absolute text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-1.5"
           />
@@ -78,7 +78,7 @@ export default function Register() {
         <div className="relative flex flex-col gap-1">
           <TextInput
             type="password"
-            id="password"
+            id="register-password"
             placeholder="Password"
             name="password"
             autoComplete="new-password"
@@ -88,7 +88,7 @@ export default function Register() {
           />
 
           <InputLabel
-            htmlFor="password"
+            htmlFor="register-password"
             value="Password"
             className="bg-gray-100 absolute text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-1.5"
           />
@@ -99,7 +99,7 @@ export default function Register() {
         <div className="relative flex flex-col gap-1">
           <TextInput
             type="password"
-            id="password_confirmation"
+            id="password-confirmation"
             placeholder="Password"
             name="password_confirmation"
             autoComplete="new-password"
@@ -109,7 +109,7 @@ export default function Register() {
           />
 
           <InputLabel
-            htmlFor="password_confirmation"
+            htmlFor="password-confirmation"
             value="Confirm Password"
             className="bg-gray-100 absolute text-xs left-2 border border-transparent -top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:bg-transparent peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-1.5"
           />
@@ -128,7 +128,11 @@ export default function Register() {
             Already registered?
           </Link> */}
 
-          <PrimaryButton className="mt-1.5 w-full" disabled={processing}>
+          <PrimaryButton
+            id="register-submit-btn"
+            className="mt-1.5 w-full"
+            disabled={processing}
+          >
             Daftar
           </PrimaryButton>
         </div>

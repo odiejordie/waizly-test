@@ -1,8 +1,12 @@
-import React from "react";
+import { motion as m } from "framer-motion";
 
 const ProfileCard = ({ user }) => {
   return (
-    <div className="relative flex items-center justify-between w-full overflow-hidden border shadow-xl bg-neutral-200 md:max-w-md rounded-3xl h-60 md:max-h-80">
+    <m.div
+      key={"profile-card"}
+      whileTap={{ scale: 0.98 }}
+      className="relative flex items-center justify-between flex-none w-full overflow-hidden border shadow-xl bg-neutral-200 md:max-w-md rounded-3xl h-60 md:max-h-80"
+    >
       <div className="p-5"></div>
       <div className="relative w-1/2 h-full">
         <div className="absolute w-1/3 h-full bg-gradient-to-r from-neutral-200"></div>
@@ -19,7 +23,7 @@ const ProfileCard = ({ user }) => {
         <span className="py-1 text-xs text-neutral-600">Card Name</span>
         <span className="text-xl font-semibold">{user.name}</span>
       </div>
-    </div>
+    </m.div>
   );
 };
 

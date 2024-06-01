@@ -109,9 +109,9 @@ export default function Login({ status, canResetPassword }) {
           }`}
         >
           <div className="text-2xl text-right text-gray-800 uppercase cursor-default font-silkscreen md:text-left transition-color hover:text-gray-600">
-            <p>Meminjam</p>
-            <p>Dengan</p>
-            <p>Gaya</p>
+            <p>Waizly</p>
+            <p>Engineer</p>
+            <p>Assessment</p>
           </div>
           <form onSubmit={submit} className="flex flex-col w-full gap-2">
             <h1 className="text-lg cursor-default font-silkscreen">Masuk...</h1>
@@ -155,12 +155,17 @@ export default function Login({ status, canResetPassword }) {
 
               <InputError message={errors.password} className="text-xs" />
             </div>
-            <PrimaryButton className="mt-1.5 w-full" disabled={processing}>
+            <PrimaryButton
+              id="login-btn"
+              className="mt-1.5 w-full"
+              disabled={processing}
+            >
               Masuk
             </PrimaryButton>
           </form>
           {showPanel.panel !== "login" ? (
             <p
+              id="register-panel-close-span"
               onClick={() => setShowPanel({ ...showPanel, panel: "login" })}
               className="mt-5 text-xs text-right text-gray-800 cursor-pointer transition-color hover:text-gray-600"
             >
@@ -173,6 +178,7 @@ export default function Login({ status, canResetPassword }) {
                 onClick={() =>
                   setShowPanel({ ...showPanel, panel: "register" })
                 }
+                id="register-panel-open-span"
                 className="font-bold cursor-pointer hover:underline transition-color hover:text-gray-600"
               >
                 Daftar Sekarang

@@ -1,0 +1,12 @@
+1. SELECT * FROM employees
+2. SELECT count(job_title) FROM employees WHERE job_title = 'Manager'
+3. SELECT * FROM employees where department = 'Sales' OR department = 'Marketing'
+4. SELECT AVG(salary) FROM employees WHERE YEAR(created_at) >= YEAR(curdate()) - 5
+5. SELECT e.name, s.sales FROM employees e JOIN sales s ON e.id = s.employee_id ORDER BY s.sales DESC limit 5
+6. SELECT `name`, `salary`, (SELECT @average := AVG(salary) FROM employees) AS average FROM employees WHERE salary > @average;
+7. SELECT ROW_NUMBER() OVER () as rank_number, e.name as name, SUM(s.sales) as amount FROM employees e JOIN sales s ON e.id = s.employee_id GROUP BY name ORDER BY amount DESC;
+8. CREATE PROCEDURE GetEmployeeByDepartment(IN department_name TEXT)
+   BEGIN
+    SELECT `name`, `salary` FROM employees WHERE department = department_name;
+   END;
+   call GetEmployeeByDepartment('Sales');

@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "43061aad-0464-4090-a550-23281699eb6d",
+		"name": "Employees",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3778616"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://meminjam-dengan-gaya.test/api/employees",
+					"protocol": "https",
+					"host": [
+						"meminjam-dengan-gaya",
+						"test"
+					],
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"mark\",\n    \"job_title\": \"Manager\",\n    \"salary\": \"60000\",\n    \"department\": \"Sales\",\n    \"join_date\": \"2024-02-02\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://meminjam-dengan-gaya.test/api/employees",
+					"protocol": "https",
+					"host": [
+						"meminjam-dengan-gaya",
+						"test"
+					],
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"mark\",\n    \"job_title\": \"Manager\",\n    \"salary\": \"60000\",\n    \"department\": \"Sales\",\n    \"join_date\": \"2024-02-02\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://meminjam-dengan-gaya.test/api/employees/9",
+					"protocol": "https",
+					"host": [
+						"meminjam-dengan-gaya",
+						"test"
+					],
+					"path": [
+						"api",
+						"employees",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"mark gg banget\",\n    \"job_title\": \"Manager\",\n    \"salary\": \"60000\",\n    \"department\": \"Sales\",\n    \"join_date\": \"2024-02-02\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://meminjam-dengan-gaya.test/api/employees/8",
+					"protocol": "https",
+					"host": [
+						"meminjam-dengan-gaya",
+						"test"
+					],
+					"path": [
+						"api",
+						"employees",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"mark\",\n    \"job_title\": \"Manager\",\n    \"salary\": \"60000\",\n    \"department\": \"Sales\",\n    \"join_date\": \"2024-02-02\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://meminjam-dengan-gaya.test/api/employees/7",
+					"protocol": "https",
+					"host": [
+						"meminjam-dengan-gaya",
+						"test"
+					],
+					"path": [
+						"api",
+						"employees",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
